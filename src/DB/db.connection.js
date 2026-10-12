@@ -3,7 +3,7 @@ import chalk from "chalk";
 
 export const test_DB_connection=async()=>{
     try {
-        await mongoose.connect("mongodb://localhost:27017/Saraha_App",{
+        await mongoose.connect(process.env.DB_URI,{
             serverSelectionTimeoutMS:2500
         })
         console.log(chalk.greenBright("DB connected successfully"))
